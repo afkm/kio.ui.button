@@ -1,10 +1,14 @@
-var template = require('./index.html');
+var template = require('./uibtn.html');
+
 
 (function () {
     'use strict';
 
+
+
+
     return angular
-        .module('kio.ui-button', [])
+        .module('kio.uibutton', [])
         .directive('uiButton', uiButton);
 
 
@@ -12,7 +16,8 @@ var template = require('./index.html');
     function uiButton () {
         var directive = {
             restrict: 'E',
-            templateUrl: template,
+            // templateUrl: templateUrl,
+            template: '<h1>Hello Kris</h1>',
             scope: true,
             controller: UiButtonController,
             controllerAs: 'button',
@@ -31,12 +36,16 @@ var template = require('./index.html');
 
         function linkFunc (scope, ele, attr, vm) {
 
+
+
             vm.link = ele[0].querySelector("a");
         }
 
 
         /** @ngInject */
         function UiButtonController () {
+
+            console.log('dftc');
 
             var vm = this;
 

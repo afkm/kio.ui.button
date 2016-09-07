@@ -1,10 +1,8 @@
-var template = require('./uibtn.html');
-
+var template = require('./src/index.html');
+import './src/index.scss';
 
 (function () {
     'use strict';
-
-
 
 
     return angular
@@ -14,10 +12,10 @@ var template = require('./uibtn.html');
 
     /** @ngInject */
     function uiButton () {
+
         var directive = {
             restrict: 'E',
-            // templateUrl: templateUrl,
-            template: '<h1>Hello Kris</h1>',
+            templateUrl: template,
             scope: true,
             controller: UiButtonController,
             controllerAs: 'button',
@@ -35,8 +33,6 @@ var template = require('./uibtn.html');
 
 
         function linkFunc (scope, ele, attr, vm) {
-
-
 
             vm.link = ele[0].querySelector("a");
         }

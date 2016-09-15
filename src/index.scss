@@ -1,3 +1,7 @@
+@import './src/app/global_styles/_variables.scss';
+@import './src/app/global_styles/_functions.scss';
+@import './src/app/global_styles/layout.scss';
+
 .ui-button {
     position: relative;
     display: inline-block;

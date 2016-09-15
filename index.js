@@ -1,4 +1,4 @@
-var template = require('./src/index.html');
+import template from './src/index.html';
 import './src/index.scss';
 
 (function () {

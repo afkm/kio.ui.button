@@ -6,7 +6,7 @@ import './src/index.scss';
 
 
     return angular
-        .module('kio.uibutton', [])
+        .module('kio.ui.button', [])
         .directive('uiButton', uiButton);
 
 

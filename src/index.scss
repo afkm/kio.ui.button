@@ -9,31 +9,41 @@
 
     &:hover,
     &:focus {
-        opacity: 0.5;
+        opacity: 0.75;
     }
 
-    &--continue-square,
-    &--continue-square-bright,
-    &--arrow-left-square,
-    &--arrow-right-square {
-        opacity: 1 !important;
 
+    &--down-trans {
+        opacity: 0.68;
         &:hover,
         &:focus {
-            svg {
-                transform: translate(-45%, -50%);
-            }
+            opacity: 1;
         }
+    }
+    &--arrow-left {
+        -ms-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+    &--arrow-right,
+    &--play,
+    &--arrow-plain-up {
+        -ms-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+
+    &--arrow-up {
+        -ms-transform: rotate(180deg);
+        transform: rotate(180deg);
     }
 
     > a {
         position: absolute;
         top: 0;
         left: 0;
-        height: 100%;
-        width: 100%;
-        display: block;
         z-index: 1;
+        display: block;
+        width: 100%;
+        height: 100%;
     }
 
 
@@ -44,271 +54,21 @@
 
 .ui-button__inner {
     position: relative;
-    background: $color-bg-dark;
-    transform-origin: 50% 50%;
+    width: rem-calc(60);
+    height: rem-calc(60);
+    transition: transform 0.4s ease-out 0s;
+    will-change: transform;
+
+    .ui-button.is-open & {
+        -ms-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
 
     svg {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transition: transform 0.1s ease-out 0s;
-        transform: translate(-50%, -50%);
+        top: 0;
+        left: 0;
+    	width: 100%;
+    	height: 100%;
     }
-
-    .ui-button--close-square & {
-        width: rem-calc(54);
-        height: rem-calc(57);
-
-        svg {
-          width: rem-calc(27);
-          height: rem-calc(27);
-        }
-    }
-
-    .ui-button--openclose & {
-    	width: rem-calc(50);
-    	height: rem-calc(50);
-    	border-radius: 50%;
-    	background: $color-bg-light;
-    	transition: transform 0.2s ease-out 0s;
-
-    	svg {
-    		width: rem-calc(26);
-    		height: rem-calc(26);
-    		path {
-    			fill: $color-bg-dark;
-    		}
-    	}
-    }
-
-    .ui-button--openclose.is-closed &{
-        transform: rotate(-45deg);
-    }
-
-
-    .ui-button--continue-square &,
-    .ui-button--continue-square-bright & {
-        width: auto;
-
-        @extend .clearfix;
-        &.has-caption {
-        	padding-left: rem-calc(105);
-        }
-
-        svg {
-            width: rem-calc(33);
-            height: rem-calc(33);
-        }
-    }
-
-    .ui-button--continue-square-bright & {
-        background: $color-bg-default;
-
-        &.has-caption {
-            padding-left: rem-calc(140);
-        }
-
-    }
-
-    .ui-button--down-trans & {
-        width: rem-calc(53);
-        height: rem-calc(53);
-        border-radius: 50%;
-        background: rgba(255,255,255,0.73);
-        transform: rotate(90deg);
-
-        svg {
-        	width: rem-calc(38);
-        	height: rem-calc(38);
-
-        	path {
-        	  fill: $color-font-dark;
-        	}
-        }
-    }
-
-    .ui-button--top-small & {
-        width: rem-calc(14);
-        height: rem-calc(14);
-        border-radius: 50%;
-
-        svg {
-            width: rem-calc(6);
-            height: rem-calc(4);
-        }
-    }
-
-    .ui-button--plus &,
-    .ui-button--minus &,
-    .ui-button--plus-small &{
-        width: rem-calc(30);
-        height: rem-calc(30);
-        border-radius: 50%;
-        background: $color-bg-dark;
-    }
-
-    .ui-button--plus & {
-        transform: rotate(-45deg);
-
-        svg {
-        	width: rem-calc(18);
-        	height: rem-calc(18);
-        }
-    }
-    .ui-button--minus & {
-        svg {
-        	width: rem-calc(20);
-        	height: rem-calc(3);
-        }
-    }
-
-    .ui-button--plus-small & {
-        width: rem-calc(15);
-        height: rem-calc(15);
-        transform: rotate(-45deg);
-
-        svg {
-            width: rem-calc(7.5);
-            height: rem-calc(7.5);
-        }
-    }
-
-    [class*="ui-button--arrow"] {
-        background: $color-bg-default;
-
-        .ui-button__symbol {
-            background: none;
-        }
-        svg {
-            width: rem-calc(34);
-            height: rem-calc(36);
-            path {
-            fill: $color-font-dark;
-            }
-        }
-    }
-
-    [class*="ui-button--arrow-left"] & {
-        transform: scaleX(-1);
-    }
-
-    .ui-button--arrow-left-circle &,
-    .ui-button--arrow-right-circle & {
-
-        .ui-button__symbol {
-            width: rem-calc(50);
-            height: rem-calc(50);
-            border-radius: 50%;
-            background: $color-bg-default;
-
-            svg {
-                width: rem-calc(27);
-                height: rem-calc(27);
-            }
-        }
-    }
-
-    .ui-button--arrow-left-square &,
-    .ui-button--arrow-right-square & {
-
-        .ui-button__symbol {
-            width: rem-calc(54);
-            height: rem-calc(57);
-            background: $color-bg-dark;
-
-            svg {
-                width: rem-calc(33);
-                height: rem-calc(33);
-            }
-        }
-    }
-
-    .ui-button--play &,
-    .ui-button--pause &,
-    .ui-button--rewind & {
-        width: rem-calc(50);
-        height: rem-calc(50);
-        border-radius: 50%;
-    }
-
-    .ui-button--play & {
-        svg {
-            left: 56%;
-            width: rem-calc(20);
-            height: rem-calc(35);
-        }
-    }
-    .ui-button--pause & {
-        svg {
-            top: 52%;
-            width: rem-calc(14);
-            height: rem-calc(20);
-        }
-    }
-    .ui-button--rewind & {
-        svg {
-            left: 47%;
-            width: rem-calc(23);
-            height: rem-calc(24);
-        }
-    }
-
-
-    .ui-button--info & {
-        width: rem-calc(59);
-        height: rem-calc(57);
-        background: $color-bg-dark;
-
-        svg {
-            width: rem-calc(11);
-            height: rem-calc(32);
-        }
-    }
-
-    .ui-button--logout & {
-        position: static;
-        display: inline;
-        background: none;
-
-        svg {
-            position: relative;
-            top: auto;
-            left: auto;
-            width: rem-calc(9);
-            height: rem-calc(11);
-            transform: none;
-        }
-    }
-}
-
-
-.ui-button__caption {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    display: block;
-    padding: 0 rem-calc(15);
-    width: rem-calc(105);
-    color: $color-font-bright;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: $font-weight-bold;
-    font-size: rem-calc(14);
-    line-height: 1;
-    transform: translate(0, -50%);
-
-    .ui-button--continue-square-bright & {
-        padding-left: rem-calc(20);
-        width: rem-calc(140);
-        color: $color-font-dark;
-        text-align: left;
-    }
-}
-
-.ui-button__symbol {
-    position: relative;
-    float: left;
-    width: rem-calc(59);
-    height: rem-calc(65);
-    background: $color-navigation-next;
 }

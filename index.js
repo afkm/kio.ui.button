@@ -15,7 +15,7 @@ import './src/index.scss';
 
         var directive = {
             restrict: 'E',
-            templateUrl: template,
+            template: template,
             scope: true,
             controller: UiButtonController,
             controllerAs: 'button',

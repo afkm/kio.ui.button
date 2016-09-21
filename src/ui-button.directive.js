@@ -1,6 +1,5 @@
-
-import template from './src/index.html';
-import './src/index.scss';
+import template from './src/ui-button.directive.html';
+import './src/ui-button.directive.scss';
 
 (function () {
     'use strict';

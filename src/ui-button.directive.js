@@ -1,5 +1,5 @@
-import template from './src/ui-button.directive.html';
-import './src/ui-button.directive.scss';
+import template from 'kio.ui.btn/src/ui-button.directive.html';
+import 'kio.ui.btn/src/ui-button.directive.scss';
 
 (function () {
     'use strict';

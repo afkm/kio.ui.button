@@ -41,7 +41,6 @@ import './src/index.scss';
         /** @ngInject */
         function UiButtonController () {
 
-            console.log('dftc');
 
             var vm = this;
 

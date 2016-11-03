@@ -1,0 +1,8 @@
+{
+  "name": "kio.ui.button",
+  "version": "1.1.11",
+  "main": [
+    "dist/ui-button.directive.js",
+    "dist/ui-button.directive.css"
+  ]
+}

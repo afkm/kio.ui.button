@@ -1,7 +1,12 @@
-import template from 'kio.ui.btn/src/ui-button.directive.html';
-import 'kio.ui.btn/src/ui-button.directive.scss';
 
-(function () {
+/* commonjs package manager support (eg componentjs) */
+if (typeof module !== "undefined" && typeof exports !== "undefined" && module.exports === exports){
+
+    module.exports = 'kio.ui.button';
+}
+
+
+(function (angular) {
     'use strict';
 
 
@@ -15,7 +20,7 @@ import 'kio.ui.btn/src/ui-button.directive.scss';
 
         var directive = {
             restrict: 'E',
-            template: template,
+            templateUrl: 'ui-button.directive.html',
             scope: true,
             controller: UiButtonController,
             controllerAs: 'button',
@@ -76,4 +81,4 @@ import 'kio.ui.btn/src/ui-button.directive.scss';
         }
     }
 
-})();
+})(window.angular);

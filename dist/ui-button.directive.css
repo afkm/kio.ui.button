@@ -1,0 +1,47 @@
+.ui-button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer; }
+  .ui-button:hover, .ui-button:focus {
+    opacity: 0.75; }
+  .ui-button--down-trans {
+    opacity: 0.68; }
+    .ui-button--down-trans:hover, .ui-button--down-trans:focus {
+      opacity: 1; }
+  .ui-button--arrow-left {
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg); }
+  .ui-button--arrow-right, .ui-button--play, .ui-button--arrow-plain-up {
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+  .ui-button--arrow-up {
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg); }
+  .ui-button > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 100%; }
+  .ui-button--openclose {
+    opacity: 1 !important; }
+
+.ui-button__inner {
+  position: relative;
+  width: 3.75rem;
+  height: 3.75rem;
+  transition: transform 0.4s ease-out 0s;
+  will-change: transform; }
+  .ui-button.is-open .ui-button__inner {
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg); }
+  .ui-button__inner svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+    .ui-button__inner svg path {
+      fill: #000; }
